@@ -24,6 +24,15 @@ const theme = createTheme({
 export default function NavBar() {
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [style, setStyle] = useState("primary");
+
+  const changeStyleRed = () => {
+    setStyle("secondary");
+  };
+
+  const changeStyleBlue = () => {
+    setStyle("primary");
+  };
 
   const handleChange = (e) => {
     setAuth(e.target.checked);
@@ -39,7 +48,7 @@ export default function NavBar() {
 
   return (
     <Box>
-      <AppBar position="static" theme={theme} color="secondary" >
+      <AppBar position="static" theme={theme} color={style} >
         <Toolbar>
           <IconButton
             size="large"
@@ -68,8 +77,14 @@ export default function NavBar() {
             open={Boolean(anchorEl)}
             onClose={handleClose}
           >
-            <MenuItem onClick={handleClose}>Blue</MenuItem>
-            <MenuItem onClick={handleClose}>Red</MenuItem>
+            <MenuItem onClick={() => {
+              handleClose()
+              changeStyleBlue()
+            }}>Blue</MenuItem>
+            <MenuItem onClick={() => {
+              changeStyleRed()
+              handleClose()
+            }}>Red</MenuItem>
           </Menu>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             News
