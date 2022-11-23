@@ -17,6 +17,12 @@ const theme = createTheme({
     },
     secondary: {
       main: '#c1121f'
+    },
+    common: {
+      main: '#ffd500'
+    },
+    test: {
+      main: '#003e1f'
     }
   }
 });
@@ -32,6 +38,14 @@ export default function NavBar() {
 
   const changeStyleBlue = () => {
     setStyle("primary");
+  };
+
+  const changeStyleYellow = () => {
+    setStyle("common");
+  };
+
+  const changeStyleTest = () => {
+    setStyle("test");
   };
 
   const handleChange = (e) => {
@@ -81,10 +95,21 @@ export default function NavBar() {
               handleClose()
               changeStyleBlue()
             }}>Blue</MenuItem>
+
             <MenuItem onClick={() => {
               changeStyleRed()
               handleClose()
             }}>Red</MenuItem>
+
+            <MenuItem onClick={() => {
+              changeStyleYellow()
+              handleClose()
+            }}>Yellow</MenuItem>
+
+            <MenuItem onClick={() => {
+              changeStyleTest()
+              handleClose()
+            }}>Test</MenuItem>
           </Menu>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             News
