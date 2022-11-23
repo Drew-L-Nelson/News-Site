@@ -39,7 +39,7 @@ export default function NavBar() {
 
   return (
     <Box>
-      <AppBar position="static" color="secondary" >
+      <AppBar position="static" theme={theme} color="secondary" >
         <Toolbar>
           <IconButton
             size="large"
