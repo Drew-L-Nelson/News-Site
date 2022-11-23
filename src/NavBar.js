@@ -6,11 +6,20 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import Switch from '@mui/material/Switch';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormGroup from '@mui/material/FormGroup';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
+import { createTheme } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#00509d'
+    },
+    secondary: {
+      main: '#c1121f'
+    }
+  }
+});
 
 export default function NavBar() {
   const [auth, setAuth] = React.useState(true);
@@ -30,7 +39,7 @@ export default function NavBar() {
 
   return (
     <Box>
-      <AppBar position="static">
+      <AppBar position="static" theme={theme.primary}>
         <Toolbar>
           <IconButton
             size="large"
