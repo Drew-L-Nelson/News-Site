@@ -13,7 +13,8 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#00509d'
+      main: '#00509d',
+      light: '#FFFFFF'
     },
     secondary: {
       main: '#c1121f'
@@ -22,7 +23,8 @@ const theme = createTheme({
       main: '#ffd500'
     },
     test: {
-      main: '#003e1f'
+      main: '#003e1f',
+      contrastText: '#FFFFFF'
     }
   }
 });
